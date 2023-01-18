@@ -1,0 +1,32 @@
+IMDb
+https://myimdb.com/api/v1/
+
+GET /{controller}/{id}
+
+GET /titles/                    - All titles in the database
+                                   -- SELECT * FROM title;
+GET /titles/{title_id}          - Get a particular title by id 									
+                                   -- SELECT * FROM title
+						              WHERE title_id = 'tt1186373';
+GET /titles/{title_id}/talent   - Gets the list of talents for the title.
+GET /titles?name={search}       - Search where the NAME = values
+                                 -- SELECT * FROM title
+                                    WHERE primary_title LIKE '%Wonder Woman%';						   
+POST /titles                    - Create new title
+PUT /titles/{title_id}          - Update existing title.
+DELETE /titles/{title_id}       - Delete existing title.
+
+GET /talents                    - All the talent in the database
+                                  SELECT * FROM talent;
+GET /talents/{talent_id}        - Gets a particular talent/person.
+                                  SELECT * FROM talent WHERE talent_id = ?;
+GET /talents/{talent_id}/titles - Gets all of the movies that the talent
+                                  has starred in.
+POST /talents                   - Create a new talent (i.e. actor/ess)
+                                  { name: 'John Snow', birthYear: 1990 }
+PUT  /talents/{talent_id}       - Update or modify a talent
+                                  { name: 'Johnathon Snow' }
+DELETE /talents/{talent_id}     - Delete a talent from the database.
+
+								  
+								  
